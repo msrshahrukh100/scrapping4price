@@ -1,0 +1,25 @@
+<html>
+{% load staticfiles %}
+<head>
+<title>
+VOODOO replica
+</title>
+</head>
+
+<body>
+
+<form method='POST' onsubmit="return false" >{% csrf_token %}
+<input type='text' placeholder="Type your item name" id='query'  />
+<input type='submit'  id='submit'/>
+</form>
+
+{% url "scraper" %}
+
+<script src="https://code.jquery.com/jquery-1.12.4.min.js"
+			  integrity="sha256-ZosEbRLbNQzLpnKIkEdrPv7lOy9C27hHQ+Xp8a4MxAQ="
+			  crossorigin="anonymous"></script>
+<script  src="{% static 'js/home.js' %}" ></script>
+</body>
+
+
+</html>
