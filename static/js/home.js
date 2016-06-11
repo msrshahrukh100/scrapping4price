@@ -13,7 +13,7 @@ var temp = {
 };
 
 $.ajax({
-	url : '/app/scrap/',
+	url : '/scrap/',
 	type: 'POST',
 	dataType: 'json',
 	async: false,

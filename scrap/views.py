@@ -20,9 +20,12 @@ def scraper(request):
 			query = ""
 
 		if query:
+			if " " in query :
+				query = query.replace(" " , "+")
+			print query
 			amazon_url = amazon_url + query
 			amazon_html = requests.get(amazon_url)
-			amazon_data = BeautifulSoup(amazon_html.content  ,"lxml")
+			amazon_data = BeautifulSoup(amazon_html.content, "html.parser")
 			x = amazon_data.find_all("li", {"class":"s-result-item celwidget"})
 			models = []
 			price = []
